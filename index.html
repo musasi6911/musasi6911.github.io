@@ -4,10 +4,93 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+
+    body{
+      background-color: #e5e5e5;
+    }
+    .out{
+      width: 500px;
+      height: 300px;
+      margin: 50px auto;
+      border: 1px solid #ccc;
+      padding: 5px;
+      background-color: #fff;
+    }
+
+    .out:hover{
+      border-color: #333;
+    }
+
+    ul{
+      list-style-type: none;
+      display: flex;
+      justify-content: center;
+    }
+
+    li{
+      font-family: Verdana;
+      margin: 0 20px;
+    }
+
+    p{
+      text-align: center;
+      font-size: 32px;
+      font-family: Verdana;
+      padding-top: 30px;
+      color: red;
+    }
+  </style>
 </head>
 <body>
   
-  <h1>Hello!</h1>
+  <div class="out">
+    <img src="pic01.jpg" alt="" id="pic">
+  </div>
 
+  <ul>
+    <li>One Click Image = Stop</li>
+    <li>Double Click Image = Play</li>
+  </ul>
+  <p></p>
+
+
+<script>
+
+  window.onload = function(){
+
+    var N = 1;
+    var TT;
+    var el = document.getElementById('pic');
+    
+    function picRun(){
+      if(N < 5){
+        N++
+      }else{
+        N = 1;
+      }
+      el.src = 'pic0' + N + '.jpg';
+      // console.log(N)
+    }
+
+    TT = setInterval(picRun, 500);
+
+    el.onclick = function(){
+      clearInterval(TT);
+      document.getElementsByTagName('p')[0].innerHTML = 'STOP!'
+    }
+
+    el.ondblclick = function(){
+      TT = setInterval(picRun, 500);
+      document.getElementsByTagName('p')[0].innerHTML = 'PLAY!'
+    }
+
+  }
+
+</script>
 </body>
 </html>
