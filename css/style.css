@@ -1,0 +1,59 @@
+@import url('reset.css');
+
+body{
+  background-color: #e5e5e5;
+  font-family: Arial;
+  line-height: 1.6;
+}
+
+.out{
+  width: 50%;
+  margin: 100px auto;
+
+  display: flex;
+  resize: horizontal;
+  overflow: auto;
+}
+
+.left{
+  width: 60%;
+  background-color: #fff;
+}
+
+.space{
+  width: 5%;
+}
+
+.right{
+  width: 35%;
+  background-color: #fff;
+}
+
+img{
+  width: 100%;
+}
+
+p{
+  padding: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
